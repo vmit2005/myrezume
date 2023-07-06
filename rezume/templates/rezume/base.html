@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Мое резюме</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<div class="menu">
+
+        <div class="wrap">
+            <img src="{% static 'rezume/i.webp' %}" height="100" alt="картинка" align="right">
+            <button class="button"> <a href="{% url 'index' %}">Резюме</a> </button>
+            <button class="button"> <a href="{% url 'acad' %}">Системы САПР</a> </button>
+            <button class="button"> <a href="{% url 'arbeit' %}">Мои проекты</a> </button>
+            <button class="button"> <a href="{% url 'programm' %}">Mои программы</a> </button>
+            <button class="button"> <a href="{% url 'feedback' %}">Обратная связь</a> </button>
+        </div>
+
+</div>
+<div class="content">
+    <div >
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</div>
+</body>
+</html>

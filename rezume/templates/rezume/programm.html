@@ -1,0 +1,20 @@
+{% extends 'rezume/base.html' %}
+{% block content %}
+<h1>Moи программы</h1>
+<p>Здесь примеры того, что я программировал. В основном до курсов.</p>
+
+  <div class="block">
+    {% for project in projects %}
+    <h2>{{ project.title }}</h2>
+      <p class="description">{{ project.description|safe}}</p>
+
+        {% if project.url %}
+    <p><a href="{{ project.url }}" target="_blank">Перейти по ссылке</a></p>
+    {% endif %}
+
+   {% endfor %}
+  </div>
+
+
+
+{% endblock %}

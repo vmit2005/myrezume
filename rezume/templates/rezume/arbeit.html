@@ -1,0 +1,38 @@
+{% extends 'rezume/base.html' %}
+{% block content %}
+<h1 xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">Moи проекты</h1>
+<p>Здесь можно увидеть некоторые проекты которые я делал как конструктор. </p>
+  <div class="block">
+    {% for project in projects %}
+    <h2>{{ project.title }}</h2>
+      <p class="description">{{ project.description|safe}}</p>
+
+<!--    <div><embed src="D:\Diplom\dipp\myrezume\media\arbeit\media\NS_nSHBsUF.pdf" type="application/pdf" alt="Чертеж" width="840px" height="420px">-->
+<!--    <a href="D:\Diplom\dipp\myrezume\media\arbeit\media\NS_nSHBsUF.pdf">Открыть в отдельном окне</a>-->
+<!--</div>-->
+<!--      <div><iframe src="D:\Diplom\dipp\myrezume\media\arbeit\media\NS_nSHBsUF.pdf" alt="Чертеж" width="840px" height="420px">-->
+<!--    </iframe><a href="../media/{{project.drawing}}">Открыть в отдельном окне</a>-->
+<!--</div>-->
+
+
+    <p>Здесь вы можете увидеть <a href="../media/{{project.drawing}}" target="_blank">чертеж </a>общего вида или сборочный чертеж
+        {% if project.dr_spec %}
+      <a href="../media/{{project.dr_spec}}"  target="_blank">, спецификацию</a>.</p>
+    {% else %}
+    .</p>
+       {% endif %}
+        {% if project.dr_model %}
+    <p>Скачать<a href="../media/{{project.dr_model}}"  > 3D модель в</a> формате STEP.</p>
+    {% endif %}
+
+
+
+
+
+   {% endfor %}
+  </div>
+
+
+
+{% endblock %}
+

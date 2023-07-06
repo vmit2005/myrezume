@@ -1,0 +1,17 @@
+{% extends 'rezume/base.html' %}
+{% block content %}
+{% csrf_token %}
+<h2>Введите ваше сообщение</h2>
+<form action="" method="post">
+<ul>
+    <li>Тема сообщения <br> <input type="text" name="title" id="" class="inp" size="60px"></li>
+    <li>Автор <br> <input type="text" name="author" id=""  class="inp" size="60px" ></li>
+
+    <li>Ваше сообщение <br> <textarea name="description" id="" cols="60" rows="4"></textarea></li>
+    <li>Показывать всем <input type="checkbox" name="alles" id="" value="True" checked></li>
+    <li><input type="submit"  class="inp" ></li>
+
+
+</ul>
+</form>
+{% endblock %}

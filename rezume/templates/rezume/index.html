@@ -1,0 +1,22 @@
+{% extends 'rezume/base.html' %}
+{% block content %}
+<h1>Moe резюме</h1>
+  <div class="block">
+    {% for project in projects %}
+    <h2>{{ project.title }}</h2>
+    {% if project.date2 %}
+      <p class="data">{{ project.date1 }} - {{ project.date2 }}</p>
+    {% else %}
+    <p class="data">{{ project.date1 }} - по настоящее время</p>
+    {% endif %}
+
+    <p>{{ project.description|safe}} </p>
+
+
+
+   {% endfor %}
+  </div>
+
+
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'rezume/base.html' %}
+{% block content %}
+
+{% for project in projects %}
+<div class="acad">
+
+    <h2>{{ project.title }}</h2>
+    <div class="element">
+        <img src="{{ project.image.url }}" alt="сапр">
+        <p>{{ project.description|safe}}</p>
+        <p><a href="{{ project.url }}" target="_blank">{{ project.url }}</a></p>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}

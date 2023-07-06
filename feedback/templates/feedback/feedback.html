@@ -1,0 +1,49 @@
+{% extends 'rezume/base.html' %}
+{% block content %}
+<h1>Обратная связь</h1>
+<p>Вы можете связаться со мной по электронной почте <a href="mailto:vmit2005@yandex.ru"> vmit2005@yandex.ru</a>
+    
+    Или напишите мне в <a href="{% url 'newfeedback2' %}"> форме обратной связи</a>ю. </p>
+<!--    , тогда вам потребуется <a href="{% url 'loginuser' %}">войти</a> или <a href="{% url 'signupuser' %}">Зарегистрироваться</a>-->
+
+</p>
+{% for feed in page_obj %}
+<p>{{ contact }}</p>
+
+<div class="element2">
+
+    <h2 class="top">Тема: {{feed.title}}  </h2>
+  {% if feed.mail %}
+    <h4 class="author">Автор: {{feed.author}}. E-mail: {{feed.mail}} </h4>
+{% else %}
+    <h4 class="author">Автор: {{feed.author}}. E-mail: не указан </h4>
+    {% endif %}
+    <div class="feed_text">
+        <p>{{feed.description}}</p>
+    </div>
+
+</div>
+{% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <button class="step-links" ><a href="?page=1">&laquo;</a></button>
+            <button class="step-links"> <a href="?page={{ page_obj.previous_page_number }}">&lt;</a></button>
+        {% endif %}
+
+        <span class="current">
+           <button class="step-links"> {{ page_obj.number }} </button>
+        </span>
+
+        {% if page_obj.has_next %}
+             <button class="step-links" ><a href="?page={{ page_obj.next_page_number }}">&gt;</a></button>
+             <button class="step-links" ><a href="?page={{ page_obj.paginator.num_pages }}">&raquo;</a></button>
+        {% endif %}
+    </span>
+</div>
+
+
+
+
+{% endblock %}

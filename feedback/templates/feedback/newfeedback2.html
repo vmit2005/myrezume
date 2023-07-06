@@ -1,0 +1,16 @@
+{% extends 'rezume/base.html' %}
+
+<!--{% block title %}Форма для добавления сообщения{% endblock %}-->
+{% block content %}
+<h2>Введите ваше сообщение</h2>
+<form  method="post">
+    <h3> {{ error }}</h3>
+    {% csrf_token %}
+<!--    {{form.as_p}}-->
+    {{form.title}}<br>
+    {{form.author}}
+    {{form.mail}}<br>
+    {{form.description}}<br>
+   <input type="submit"  class="button">
+</form>
+{% endblock %}

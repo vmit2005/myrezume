@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body{
+    background-color: rgb(245, 28, 28);
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    max-width: 1200px ;
+    min-width:500px;
+    
+}
+.grid2{
+    display:grid;
+   grid-template-columns: 240px 260px;
+
+}
+.column{
+    display: flex;
+    flex-direction:column-reverse;
+    padding: 40px;
+    vertical-align:top;
+    width: 250px;
+
+}
+.line{
+    display: flex;
+    flex-direction: row-reverse;
+} 
+
+.element img{
+    width: 500px;
+}
+h1{
+    font-size: 32px;
+    font-weight: bold;
+}
+h2{
+    font-size:24px ;
+    font-weight: bold;
+}
+p{
+    font-size: 16px;
+    font-weight: bold;
+}
+.wrap{
+    max-width : 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing:border-box;
+
+}
+text{
+    text-align:left ;
+}
+.menu {
+    background: rgb(80, 80, 80);
+}
+.menu .wrap{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu .a{
+    color: #e8e8e8;
+    font-weight: bold;
+    text-decoration: none;
+}
+.menu ul{
+    display: flex;
+    list-style: none;
+    font-size: 20px;
+}
+button{
+    border-radius: 25px;
+    font-weight: 20px;
+    font-weight: bold;
+    width: 130px;
+    height:60px ;
+}

@@ -18,6 +18,11 @@ from re import findall
 
 
 def feedbacks(request):
+    if request.user.is_authenticated:
+        pass
+    else:
+        user = authenticate(request, username='user', password='user1234')
+        login(request, user)
     feeds = Feedback.objects.order_by('id')
     p = Paginator(feeds, 4)
     page_number = request.GET.get('page')
@@ -33,15 +38,13 @@ def feedbacks(request):
 # def new_feedback(request):
 #     return render(request, 'feedback/newfeedback.html')
 
-@login_required
-def new_feedback2(request):
+def newfeedback2(request):
     global user
     user = request.user
 
     print('USR', user)
     if request.user.is_authenticated:
 
-        print(request.user)
         if request.method == 'POST':
             form = FeedbackForm(request.POST)
 
@@ -60,7 +63,19 @@ def new_feedback2(request):
             'form': form,
             # 'error': error
         }
-    return render(request, 'feedback/newfeedback2.html', data)
+
+        return render(request, 'feedback/newfeedback2.html', data)
+
+    else:
+        user = authenticate(request, username='user', password='user1234')
+        login(request,user)
+        form = FeedbackForm(initial={'value': 'bbb'})
+        data = {
+            'form': form,
+            # 'error': error
+        }
+        return render(request, 'feedback/newfeedback2.html', data)
+
 
 
 def signupuser(request):

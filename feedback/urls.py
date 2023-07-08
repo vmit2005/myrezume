@@ -11,7 +11,7 @@ urlpatterns = [
     path('login/', views.loginuser, name='loginuser'),
     path('logout/', views.logoutuser, name='logoutuser'),
     # path('new_feedback/', views.new_feedback, name='newfeedback'),
-    path('new_feedback2/', views.new_feedback2, name='newfeedback2'),
+    path('newfeedback2/', views.newfeedback2, name='newfeedback2'),
 
 
 
